@@ -20,7 +20,7 @@ def train():
 
     ## Hyperparameters
     config = {'num_points' : 1024,
-            'batch_size': 11,
+            'batch_size': 32,
             'use_normals': True,
             'optimizer': 'RangerVA',
             'lr': 0.001,
