@@ -89,7 +89,7 @@ def train():
     # t.toc()
 
 
-    exit()
+#     exit()
     #
     criterion = pt_cls.Loss().cuda()
 
