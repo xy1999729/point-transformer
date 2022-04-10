@@ -58,12 +58,12 @@ def train():
     log_string(config)
 
     ## Create Dataloader
-    # data_path = 'data/modelnet40_normal_resampled/'
-    # train_ds = ModelNetDataLoader(root=data_path, npoint=config['num_points'], split='train', normal_channel=config['use_normals'])
-    # test_ds = ModelNetDataLoader(root=data_path, npoint=config['num_points'], split='test', normal_channel=config['use_normals'])
+    data_path = 'data/modelnet40_normal_resampled/'
+    train_ds = ModelNetDataLoader(root=data_path, npoint=config['num_points'], split='train', normal_channel=config['use_normals'])
+    test_ds = ModelNetDataLoader(root=data_path, npoint=config['num_points'], split='test', normal_channel=config['use_normals'])
 
-    # train_dl = torch.utils.data.DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True, num_workers=8)
-    # test_dl = torch.utils.data.DataLoader(test_ds, batch_size=config['batch_size'], shuffle=False, num_workers=8)
+    train_dl = torch.utils.data.DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True, num_workers=8)
+    test_dl = torch.utils.data.DataLoader(test_ds, batch_size=config['batch_size'], shuffle=False, num_workers=8)
 
     ## Create Point Transformer model
     model = pt_cls.Point_Transformer(config).cuda()
